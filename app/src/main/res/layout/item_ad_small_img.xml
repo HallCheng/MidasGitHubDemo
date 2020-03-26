@@ -1,0 +1,98 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ad_container_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#20000000"
+    android:padding="12dp">
+
+    <RelativeLayout
+        android:id="@+id/small_img_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true">
+
+        <ImageView
+            android:id="@+id/small_img"
+            android:layout_width="120dp"
+            android:layout_height="80dp"
+            android:scaleType="centerCrop" />
+
+        <com.xnad.sdk.ad.widget.AdLogoImageView
+            android:id="@id/ad_logo_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@id/small_img"
+            android:layout_alignBottom="@id/small_img" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/ad_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/small_img_layout"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="2dp"
+        android:layout_toRightOf="@id/small_img_layout"
+        android:layout_weight="1"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="TopMob，让全球app更有价值"
+        android:textColor="#222222"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/ad_desc_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ad_title_tv"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="2dp"
+        android:layout_toRightOf="@id/small_img_layout"
+        android:layout_weight="1"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="TopMob，让全球app更有价值"
+        android:textColor="#222222"
+        android:textSize="15sp" />
+
+    <ImageView
+        android:id="@+id/ad_icon_iv"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignLeft="@id/ad_title_tv"
+        android:layout_alignBottom="@id/small_img_layout"
+        android:layout_marginRight="8dp" />
+
+    <TextView
+        android:id="@+id/ad_source_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/small_img_layout"
+        android:layout_marginRight="12dp"
+        android:layout_marginBottom="1dp"
+        android:layout_toLeftOf="@id/creative_view"
+        android:layout_toRightOf="@id/ad_icon_iv"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="TobMob"
+        android:textColor="#9A9A9A"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/creative_view"
+        android:layout_width="wrap_content"
+        android:layout_height="26dp"
+        android:layout_alignBottom="@id/small_img_layout"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/shape_ad_button_bg"
+        android:gravity="center"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="查看详情"
+        android:textColor="#2291d8"
+        android:textSize="11sp" />
+
+</RelativeLayout>

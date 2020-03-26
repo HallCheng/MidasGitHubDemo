@@ -6,29 +6,124 @@ android {
 
     defaultConfig {
         applicationId "com.hellogeek.iheshui"
-        minSdkVersion 16
+        minSdkVersion 17
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
+        ndk {
+            abiFilters 'armeabi-v7a','armeabi','arm64-v8a'
+        }
+    }
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    signingConfigs {
+        release {
+            storeFile file('../love_drink_water.jks')
+            storePassword 'geek123'
+            keyAlias = 'geek'
+            keyPassword 'geek123'
+        }
     }
 
     buildTypes {
-        release {
+        debug {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
         }
     }
 
 }
 
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-
+    //android 所需组件
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    //牛数sdk
+    implementation ('com.xiaoniu.statistic:NiuData:1.2.5.2'){changing = true}
+    //穿山甲sdk
+    implementation(name: 'open_ad_sdk', ext: 'aar')
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.6'
+    //优量汇sdk
+    implementation(name: 'GDTSDK.unionNormal.4.176.1046', ext: 'aar')
+    //TopMob sdk
+    implementation(name: 'meishu_sdk', ext: 'aar')
+    implementation(name: 'msa_mdid_1.0.13', ext: 'aar')
+    implementation 'com.github.razerdp:BasePopup:2.2.1'
+    implementation 'com.squareup.okhttp3:okhttp:3.12.1'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.googlecode.android-query:android-query:0.25.9'
+    //Midas广告sdk    AndroidX使用
+    implementation ('com.xnad.sdk:XnAd:1.3.1_alpha_AndroidX'){changing = true}
+//    //Midas广告sdk 非Android使用
+//    implementation ('com.xnad.sdk:XnAd:1.3.1_V4'){changing = true}
+
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    //MobVista广告SDK AndroidX使用13.0.31版本
+    implementation 'com.mintegral.msdk:videojs:13.0.31'
+    implementation 'com.mintegral.msdk:mtgjscommon:13.0.31'
+    implementation 'com.mintegral.msdk:playercommon:13.0.31'
+    implementation 'com.mintegral.msdk:reward:13.0.31'
+    implementation 'com.mintegral.msdk:videocommon:13.0.31'
+    implementation 'com.mintegral.msdk:optimizedata:13.0.31'
+    implementation 'com.mintegral.msdk:common:13.0.31'
+    implementation 'com.mintegral.msdk:mtgdownloads:13.0.31'
+    implementation 'com.mintegral.msdk:interstitialvideo:13.0.31'
+    implementation 'com.mintegral.msdk:mtgnative:13.0.31'
+    implementation 'com.mintegral.msdk:nativeex:13.0.31'
+    implementation 'com.mintegral.msdk:mtgbanner:13.0.31'
+    implementation 'com.mintegral.msdk:interstitial:13.0.31'
+//    //MobVista广告SDK  非AndroidX使用10.2.41版本
+//    api 'com.mintegral.msdk:videojs:10.2.41'
+//    api 'com.mintegral.msdk:mtgjscommon:10.2.41'
+//    api 'com.mintegral.msdk:playercommon:10.2.41'
+//    api 'com.mintegral.msdk:reward:10.2.41'
+//    api 'com.mintegral.msdk:videocommon:10.2.41'
+//    api 'com.mintegral.msdk:optimizedata:10.2.41'
+//    api 'com.mintegral.msdk:common:10.2.41'
+//    api 'com.mintegral.msdk:mtgdownloads:10.2.41'
+//    api 'com.mintegral.msdk:interstitialvideo:10.2.41'
+//    api 'com.mintegral.msdk:mtgnative:10.2.41'
+//    api 'com.mintegral.msdk:nativeex:10.2.41'
+//    api 'com.mintegral.msdk:mtgbanner:10.2.41'
+//    api 'com.mintegral.msdk:interstitial:10.2.41'
+
+    //推啊广告SDK
+    implementation('com.tuia:sdk:1.6.0.4') {
+        transitive = true
+    }
+    //InMoBiSDK    AndroidX使用
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'androidx.multidex:multidex:2.0.0'
+//    //InMoBiSDK    非AndroidX使用
+//    implementation 'com.squareup.picasso:picasso:2.71828'
+//    implementation 'com.android.support:recyclerview-v7:28.0.0'
+//    implementation 'com.android.support:support-v4:28.0.0'
+//    implementation 'com.android.support:multidex:1.0.1'
+
 }
