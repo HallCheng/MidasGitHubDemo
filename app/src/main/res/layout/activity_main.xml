@@ -81,7 +81,7 @@
         android:layout_below="@id/radio_group"
         android:orientation="horizontal">
 
-        <androidx.appcompat.widget.AppCompatButton
+        <android.support.v7.widget.AppCompatButton
             android:id="@+id/load_ad_btn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -89,21 +89,21 @@
             android:layout_weight="1"
             android:text="展示" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <android.support.v7.widget.AppCompatButton
             android:id="@+id/prepare_load_btn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="预加载" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <android.support.v7.widget.AppCompatButton
             android:id="@+id/locker_set_btn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="锁屏->设置" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <android.support.v7.widget.AppCompatButton
             android:id="@+id/ask_is_ready_btn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -113,7 +113,7 @@
     </LinearLayout>
 
 
-    <androidx.appcompat.widget.AppCompatButton
+    <android.support.v7.widget.AppCompatButton
         android:id="@+id/self_render_list_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

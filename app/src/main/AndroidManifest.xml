@@ -39,7 +39,7 @@
                 android:resource="@xml/meishu_file_path" />
         </provider>
         <!--非AndroidX-->
-        <!--<provider
+        <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="${applicationId}.fileprovider"
             android:exported="false"
@@ -47,9 +47,9 @@
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/gdt_inmobi_file_path" />
-        </provider>-->
+        </provider>
         <!--AndroidX-->
-        <provider
+        <!--<provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.fileprovider"
             android:exported="false"
@@ -57,7 +57,7 @@
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/gdt_inmobi_file_path" />
-        </provider>
+        </provider>-->
         <provider
             android:name="com.bytedance.sdk.openadsdk.TTFileProvider"
             android:authorities="${applicationId}.TTFileProvider"

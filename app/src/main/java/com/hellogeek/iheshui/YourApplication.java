@@ -2,9 +2,8 @@ package com.hellogeek.iheshui;
 
 import android.content.Context;
 import android.os.Looper;
-
-import androidx.multidex.MultiDex;
-import androidx.multidex.MultiDexApplication;
+import android.support.multidex.MultiDex;
+import android.support.multidex.MultiDexApplication;
 
 import com.xnad.sdk.MidasAdSdk;
 import com.xnad.sdk.ad.entity.ScreenOrientation;
