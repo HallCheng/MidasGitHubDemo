@@ -87,6 +87,8 @@ public class SelfRenderRecyclerActivity extends AppCompatActivity {
         AdParameter adParameter = new AdParameter.Builder(this, "adpos_4369719761")
                 //请求列表条数 最大3条
                 .setRequestListCount(3)
+                //是否自渲染显示缓存
+                .setNeedSelfRenderCache(false)
                 .build();
         MidasAdSdk.getAdsManger().loadAd(adParameter, new AbsAdCallBack() {
             @Override
